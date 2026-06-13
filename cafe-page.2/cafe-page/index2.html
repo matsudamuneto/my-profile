@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html class="scroll-smooth" lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,66 +9,68 @@
 
 <body class="bg-green-50">
     
-    <header class="flex flex-row justify-start gap-8 p-4 border-b border-gray-300">
-        <h1 class="text-xl font-bold ml-4">harborsカフェ</h1>
-        <a href="#" class="text-lg font-normal border-b-2 border-blue-800 hover:text-blue-800 transition-colors">メニュー</a>
-        <a href="#" class="text-lg font-normal hover:text-blue-800 transition-colors">サービス</a>
+    <header class="fixed top-0 left-0 right-0 flex flex-row justify-between items-center p-4 border-b border-gray-300 bg-green-700/90">
+        <h1 class="text-xl font-bold pl-6">harborsカフェ</h1>
+        <div class="flex gap-6 pr-6">
+            <a href="#menu" class="text-lg font-serif hover:text-blue-700 hover:underline hover:scale-105 transition duration-200">メニュー</a>
+            <a href="#" class="text-lg font-serif hover:text-blue-700 hover:underline hover:scale-105 transition duration-200">サービス</a>
+        </div>
     </header>
 
     <main>
-        <h1 class="flex justify-center text-3xl font-bold p-10 border-b-8 border-gray-200">メニュー</h1>
+        <h1 id="menu" class="text-center text-3xl font-bold p-10 border-b-8 border-gray-200 pt-20">メニュー</h1>
         <div>
             <h1 class="flex justify-center text-3xl font-bold p-10">フード</h1>
-            <div class="flex gap-2 ml-4">
-                <div class="bg-white rounded-lg shadow overflow-hidden w-60 h-80">
-                    <img src="./img/パンケーキ.png" alt="パンケーキ" class="w-full h-60">
-                    <p class="text-start p-2 text-2xl font-normal">パンケーキ</p>
-                    <p class="text-start ml-2 text-xl font-normal hover:text-blue-400 transition-colors">¥700</p>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-2 mx-2">
+                <div class="bg-white rounded-3xl shadow overflow-hidden">
+                    <img src="./img/パンケーキ.png" alt="パンケーキ">
+                    <p class="text-start pt-2 px-2 text-2xl font-serif">パンケーキ</p>
+                    <p class="text-start ml-2 pb-2 text-xl font-serif hover:text-blue-700 hover:underline transition duration-200">¥700</p>
                 </div>
-                <div class="bg-white rounded-lg shadow overflow-hidden w-60 h-80">
-                    <img src="./img/フルーツタルト.png" alt="フルーツタルト" class="w-full h-60">
-                    <p class="text-start p-2 text-2xl font-normal">フルーツタルト</p>
-                    <p class="text-start ml-2 text-xl font-normal hover:text-blue-400 transition-colors">¥700</p>
+                <div class="bg-white rounded-3xl shadow overflow-hidden">
+                    <img src="./img/フルーツタルト.png" alt="フルーツタルト">
+                    <p class="text-start pt-2 px-2 text-2xl font-serif">フルーツタルト</p>
+                    <p class="text-start ml-2 pb-2 text-xl font-serif hover:text-blue-700 hover:underline transition duration-200">¥700</p>
                 </div>
-                <div class="bg-white rounded-lg shadow overflow-hidden w-60 h-80">
-                    <img src="./img/チョコチップクッキー.png" alt="チョコチップクッキー" class="w-full h-60">
-                    <p class="text-start p-2 text-2xl font-normal">チョコチップクッキー</p>
-                    <p class="text-start ml-2 text-xl font-normal hover:text-blue-400 transition-colors">¥400</p>
+                <div class="bg-white rounded-3xl shadow overflow-hidden">
+                    <img src="./img/チョコチップクッキー.png" alt="チョコチップクッキー">
+                    <p class="text-start pt-2 text-2xl font-serif">チョコチップクッキー</p>
+                    <p class="text-start ml-2 pb-2 text-xl font-serif hover:text-blue-700 hover:underline transition duration-200">¥400</p>
                 </div>
-                <div class="bg-white rounded-lg shadow overflow-hidden w-60 h-80">
-                    <img src="./img/マカロン.png" alt="マカロン" class="w-full h-60">
-                    <p class="text-start p-2 text-2xl font-normal">マカロン</p>
-                    <p class="text-start ml-2 text-xl font-normal hover:text-blue-400 transition-colors">¥600</p>
+                <div class="bg-white rounded-3xl shadow overflow-hidden">
+                    <img src="./img/マカロン.png" alt="マカロン">
+                    <p class="text-start pt-2 px-2 text-2xl font-serif">マカロン</p>
+                    <p class="text-start ml-2 pb-2 text-xl font-serif hover:text-blue-700 hover:underline transition duration-200">¥600</p>
                 </div>
-                <div class="bg-white rounded-lg shadow overflow-hidden w-60 h-80">
-                    <img src="./img/クロワッサン.png" alt="クロワッサン" class="w-full h-60">
-                    <p class="text-start p-2 text-2xl font-normal">クロワッサン</p>
-                    <p class="text-start ml-2 text-xl font-normal hover:text-blue-400 transition-colors">¥500</p>
+                <div class="bg-white rounded-3xl shadow overflow-hidden">
+                    <img src="./img/クロワッサン.png" alt="クロワッサン">
+                    <p class="text-start pt-2 px-2 text-2xl font-serif">クロワッサン</p>
+                    <p class="text-start ml-2 pb-2 text-xl font-serif hover:text-blue-700 hover:underline transition duration-200">¥500</p>
                 </div>
             </div>
         </div>
         <div>
-            <h1 class="flex justify-center text-3xl font-bold p-10 mt-10 border-t-8 border-gray-200">ビバレッジ</h1>
-            <div class="flex gap-2 ml-4">
-                <div class="bg-white rounded-lg shadow overflow-hidden w-80 h-80">
-                    <img src="./img/コーヒー.jpg" alt="コーヒー" class="w-full h-60">
-                    <p class="text-start p-2 text-2xl font-normal">コーヒー</p>
-                    <p class="text-start ml-2 text-xl font-normal hover:text-blue-400 transition-colors">¥400</p>
+            <h1 class="text-center text-3xl font-bold p-10 mt-10 border-t-8 border-gray-200">ビバレッジ</h1>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mx-2">
+                <div class="bg-white rounded-3xl shadow overflow-hidden">
+                    <img src="./img/コーヒー.jpg" alt="コーヒー" class="object-cover">
+                    <p class="text-start pt-2 px-2 text-2xl font-serif">コーヒー</p>
+                    <p class="text-start ml-2 pb-2 text-xl font-serif hover:text-blue-700 hover:underline transition duration-200">¥400</p>
                 </div>
-                <div class="bg-white rounded-lg shadow overflow-hidden w-80 h-80">
-                    <img src="./img/カフェオレ.png" alt="カフェオレ" class="w-full h-60">
-                    <p class="text-start p-2 text-2xl font-normal">カフェオレ</p>
-                    <p class="text-start ml-2 text-xl font-normal hover:text-blue-400 transition-colors">¥420</p>
+                <div class="bg-white rounded-3xl shadow overflow-hidden">
+                    <img src="./img/カフェオレ.png" alt="カフェオレ" class="object-cover">
+                    <p class="text-start pt-2 px-2 text-2xl font-serif">カフェオレ</p>
+                    <p class="text-start ml-2 pb-2 text-xl font-serif hover:text-blue-700 hover:underline transition duration-200">¥420</p>
                 </div>
-                <div class="bg-white rounded-lg shadow overflow-hidden w-80 h-80">
-                    <img src="./img/紅茶.png" alt="紅茶" class="w-full h-60">
-                    <p class="text-start p-2 text-2xl font-normal">紅茶</p>
-                    <p class="text-start ml-2 text-xl font-normal hover:text-blue-400 transition-colors">¥380</p>
+                <div class="bg-white rounded-3xl shadow overflow-hidden">
+                    <img src="./img/紅茶.png" alt="紅茶" class="object-cover">
+                    <p class="text-start pt-2 px-2 text-2xl font-serif">紅茶</p>
+                    <p class="text-start ml-2 pb-2 text-xl font-serif hover:text-blue-700 hover:underline transition duration-200">¥380</p>
                 </div>
-                <div class="bg-white rounded-lg shadow overflow-hidden w-80 h-80">
-                    <img src="./img/抹茶ラテ.png" alt="抹茶ラテ" class="w-full h-60">
-                    <p class="text-start p-2 text-2xl font-normal">抹茶ラテ</p>
-                    <p class="text-start ml-2 text-xl font-normal hover:text-blue-400 transition-colors">¥430</p>
+                <div class="bg-white rounded-3xl shadow overflow-hidden">
+                    <img src="./img/抹茶ラテ.png" alt="抹茶ラテ" class="object-cover">
+                    <p class="text-start pt-2 px-2 text-2xl font-serif">抹茶ラテ</p>
+                    <p class="text-start ml-2 pb-2 text-xl font-serif hover:text-blue-700 hover:underline transition duration-200">¥430</p>
                 </div>
             </div>
         </div>
