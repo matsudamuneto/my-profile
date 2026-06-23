@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>架空の学校のホームページ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header>
+        <section class="gap-8 md:h-screen bg-cover bg-center flex flex-col justify-between"
+        style="background-image: url('img/school-hero.jpg');">
+            <div class="flex items-center p-4">
+                <a href="#" class="flex items-center gap-2 hover:scale-105 transition duration-200">
+                    <img src="img/school-badge.png" alt="学校ロゴ" class="w-18 h-16"><span class="text-xl font-semibold">富山県立</span><span class="text-2xl font-bold">松田高等学校</span>
+                </a>
+            </div>
+            <h1 class="text-center text-5xl md:text-7xl text-[#1E0040] font-serif">学びたきもの集う</h1>
+            <h2 class="text-2xl md:text-3xl font-serif text-white px-6 md:max-w-2xl mx-auto">「慎重 自ラ持シ 敢為 事ニ当ル」の校訓のもと、心身ともに健全で発展的未来の創造に寄与する人間の育成を目指します。</h2>
+            <nav class="flex divide-x divide-gray-200 rounded-md overflow-hidden p-4 md:p-12">
+                <a href="#" class="flex-1 px-4 py-2 font-serif text-sm md:text-xl text-center text-[#1E0040] bg-gray-50/90 hover:bg-[#1E0040] hover:text-white transition duration-200">お知らせ</a>
+                <a href="#" class="flex-1 px-4 py-2 font-serif text-sm md:text-xl text-center text-[#1E0040] bg-gray-50/90 hover:bg-[#1E0040] hover:text-white transition duration-200">学校紹介</a>
+                <a href="#" class="flex-1 px-4 py-2 font-serif text-sm md:text-xl text-center text-[#1E0040] bg-gray-50/90 hover:bg-[#1E0040] hover:text-white transition duration-200">お問い合わせ</a>
+            </nav>
+        </section>
+    </header>
+    <main class="bg-cover bg-center flex flex-col justify-between" style="background-image: url('img/Cherry\ blossom.png');">
+        <section class="flex flex-col items-center gap-6 p-12">
+            <h1 class="text-center text-4xl text-[#1E0040] font-serif">松田高校を知る</h1>
+            <div class="grid grid-cols-1 md:grid-cols-3 md:max-w-3xl mx-auto">
+                <img src="img/classroom.jpg" alt="教室" class="w-full h-full object-cover hover:shadow-2xl">
+                <div class="flex flex-col items-center gap-4 shadow hover:shadow-2xl p-6 bg-white">
+                    <h3 class="text-2xl font-serif text-[#1E0040]">学校生活</h3>
+                    <p class="text-lg font-serif text-center">「生活あっての学習、学習あっての進路」志の高い仲間と切磋琢磨しながら、生徒一人ひとりが成長し、進路実現を目指しています。</p>
+                </div>
+                <img src="img/workspace.jpg" alt="自習室" class="w-full h-full object-cover hover:shadow-2xl">
+                <div class="flex flex-col items-center gap-4 shadow hover:shadow-2xl p-6 bg-white">
+                    <h3 class="text-2xl font-serif text-[#1E0040]">施設紹介</h3>
+                    <p class="text-lg font-serif text-center">本校は、生徒の学習活動の充実を図るため、全国の高校教育をリードするさまざまな教育施設を整備しています。</p>
+                </div>
+                <img src="img/gate.jpg" alt="校門" class="w-full h-full object-cover hover:shadow-2xl">
+                <div class="flex flex-col items-center gap-4 shadow hover:shadow-2xl p-6 bg-white">
+                    <h3 class="text-2xl font-serif text-[#1E0040]">学校説明会</h3>
+                    <p class="text-lg font-serif text-center">入学を希望される方へ、松田高校での学びや入試を知るためのさまざまなイベントをご案内します。</p>
+                </div>
+            </div>
+    </main>
+    <footer class="bg-[#1E0040] text-white p-4">
+        <div class="flex flex-col md:flex-row justify-between items-center max-w-5xl mx-auto">
+            <p class="text-lg font-serif">&copy; 2026 松田高校</p>
+            <nav class="flex gap-4 mt-2 md:mt-0">
+                <a href="#" class="hover:underline hover:scale-105 transition duration-200">プライバシーポリシー</a>
+                <a href="#" class="hover:underline hover:scale-105 transition duration-200">利用規約</a>
+                <a href="#" class="hover:underline hover:scale-105 transition duration-200">お問い合わせ</a>
+            </nav>
+        </div>
+</body>
+</html>
