@@ -38,7 +38,7 @@
             }
 
             const heightInMeters=height/100;
-            const bmi=weight/(heightInMeters**2);
+            const bmi=weight/(heightInMeters*heightInMeters);
             document.getElementById('bmiValue').textContent=bmi.toFixed(2);
 
             let category='';
