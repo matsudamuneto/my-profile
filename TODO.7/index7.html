@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODOリスト</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <h1 class="text-4xl font-bold text-center my-8">TODOリスト</h1>
+    <input type="text" id="taskinput" placeholder="タスクを入力" class="border border-gray-300 rounded px-3 py-2 w-full max-w-sm md:max-w-md mx-auto block mb-4">
+    <button id="addtask" class="bg-blue-400 text-white px-4 py-2 rounded-xl hover:bg-blue-500 transition-colors duration-300 block mx-auto mb-4">タスクを追加</button>
+    <ul id="tasklist" class="max-w-sm md:max-w-md mx-auto space-y-2"></ul>
+
+    <script>
+        const taskInput = document.getElementById('taskinput');
+        const addTaskButton = document.getElementById('addtask');
+        const taskList = document.getElementById('tasklist');
+        
+        function addTask() {
+            const taskText = taskInput.value.trim();
+            if (taskText !== '') {
+                const taskItem = document.createElement('li');
+                taskItem.classList.add(
+                    'flex', 'justify-between', 'items-center',
+                    'bg-gray-100', 'p-2', 'rounded'
+                );
+                taskItem.innerHTML = `
+                    <span>${taskText}</span>
+                    <div class="flex gap-2">
+                        <button class="bg-green-400 text-white px-2 py-1 rounded hover:bg-green-500 transition-colors duration-300">完了</button>
+                        <button class="bg-red-400 text-white px-2 py-1 rounded hover:bg-red-500 transition-colors duration-300">削除</button>
+                    </div>
+                `;
+                taskList.appendChild(taskItem);
+                taskInput.value = '';
+            }
+        }
+        addTaskButton.addEventListener('click', addTask);
+        taskInput.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') {
+                addTask();
+            }
+        });
+
+        taskList.addEventListener('click', (event) => {
+            if (event.target.tagName === 'BUTTON') {
+                const taskItem = event.target.closest('li');
+                if (event.target.textContent === '完了') {
+                    const text = taskItem.querySelector('span');
+                    text.classList.toggle('line-through');
+                    text.classList.toggle('text-gray-500');
+                } else if (event.target.textContent === '削除') {
+                    taskItem.remove();
+                }
+            }
+        });
+    </script>
+</body>
