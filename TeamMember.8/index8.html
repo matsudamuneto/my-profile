@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>架空のチームメンバー</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="max-w-4xl mx-auto p-6">
+        <h1 class="text-4xl font-bold mb-6">架空のチームメンバー</h1>
+        <p class="mb-6">以下は架空のチームメンバーの情報です。名前、役割、コメントを表示しています。</p>
+        <section class="grid gap-4 grid-cols-2 lg:grid-cols-3">
+        </section>
+    </div>
+
+    <script>
+        const members = [
+            { name: "青木", yomi: "あおき", role: "エンジニア", comment: "フロントエンド開発" },
+            { name: "佐藤", yomi: "さとう", role: "マーケター", comment: "マーケティング担当" },
+            { name: "鈴木", yomi: "すずき", role: "エンジニア", comment: "バックエンド開発" },
+            { name: "福田", yomi: "ふくだ", role: "デザイナー", comment: "UI/UXデザイン" },
+            { name: "松田", yomi: "まつだ", role: "マネージャー", comment: "プロジェクト管理" },
+        ];
+        members.sort((a, b) => a.yomi.localeCompare(b.yomi, 'ja', { sensitivity: 'base' })).forEach(member => {
+            const card = document.createElement('div');
+            card.classList.add('rounded', 'bg-white', 'p-4', 'shadow', 'mb-2');
+            card.innerHTML = `
+                <h2 class="text-lg font-semibold">${member.name}</h2>
+                <p class="text-sm text-gray-600">${member.role}</p>
+                <p class="mt-2">${member.comment}</p>
+            `;
+            document.querySelector('section').appendChild(card);
+        });
+    </script>
+</body>
