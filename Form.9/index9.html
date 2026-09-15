@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ユーザー登録フォーム</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+    <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
+        <h1 class="text-2xl font-bold mb-6">ユーザー登録フォーム</h1>
+        <form id="registrationForm" novalidate class="space-y-4">
+            <div>
+                <label for="name" class="block text-sm font-medium text-gray-700">名前</label>
+                <input type="text" id="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="例: 山田太郎">
+            </div>
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">メールアドレス</label>
+                <input type="email" id="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="例: taro@example.com">
+            </div>
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-700">パスワード</label>
+                <input type="password" id="password" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="例: ********">
+            </div>
+            <div>
+                <label for="confirmPassword" class="block text-sm font-medium text-gray-700">パスワード確認</label>
+                <input type="password" id="confirmPassword" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="例: ********">
+            </div>
+            <label for="accept" class="flex items-center">
+                <input type="checkbox" id="accept" required class="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                <span class="ml-2 text-sm text-gray-700">利用規約に同意する</span>
+            </label>
+            <button type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">登録</button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('registrationForm');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const accept = document.getElementById('accept');
+
+            if (!name || !email || !password || !confirmPassword) {
+                alert('すべてのフィールドを入力してください。');
+                return;
+            }
+
+            if (password.length < 8) {
+                alert('パスワードは8文字以上である必要があります。');
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                alert('パスワードが一致しません。');
+                return;
+            }
+
+            if (!accept.checked) {
+                alert('利用規約に同意してください。');
+                return;
+            }
+
+            alert(`登録が完了しました。\n名前: ${name}\nメールアドレス: ${email}`);
+        });
+    </script>
+</body>
+</html>
