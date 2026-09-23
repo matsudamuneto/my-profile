@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHubユーザー表示ツール</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="min-h-screen flex items-center justify-center bg-gray-100 p-4">
+        <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
+            <h1 class="text-2xl font-bold mb-6">GitHubユーザー表示ツール</h1>
+            <form id="githubForm" class="space-y-4">
+                <div>
+                    <label for="username" class="block text-sm font-medium text-gray-700">GitHubユーザー名</label>
+                    <input type="text" id="username" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="例: octocat">
+                </div>
+                <button type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">検索</button>
+            </form>
+            <div id="result" class="mt-6"></div>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('githubForm');
+        const resultDiv = document.getElementById('result');
+
+        form.addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value.trim();
+            if (!username) {
+                alert('ユーザー名を入力してください。');
+                return;
+            }
+
+            try {
+                const response = await fetch(`https://api.github.com/users/${username}`);
+                if (!response.ok) {
+                    throw new Error('ユーザーが見つかりませんでした。');
+                }
+                const data = await response.json();
+                resultDiv.innerHTML = `
+                    <h2 class="text-xl font-semibold">${data.login}</h2>
+                    <img src="${data.avatar_url}" alt="${data.login}のアバター" class="w-24 h-24 rounded-full mt-2">
+                    <p class="mt-2">名前: ${data.name || '情報なし'}</p>
+                    <p class="mt-2">bio: ${data.bio || '情報なし'}</p>
+                    <p class="mt-2">フォロワー: ${data.followers}</p>
+                    <p>フォロー中: ${data.following}</p>
+                `;
+            } catch (error) {
+                resultDiv.innerHTML = `<p class="text-red-500">${error.message}</p>`;
+            }
+        });
+    </script>
+</body>
