@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 背景のグラデーションだけはTailwindのユーティリティだと冗長になるので素のCSSで指定 */
+body {
+  background: linear-gradient(180deg, #f7d9de 0%, #fbe9d9 45%, #fff8ee 100%);
+}
+
+/* 花びらが降るアニメーションと、結果カードが開くアニメーション。
+   Tailwindには元から無い動きなので@keyframesで自作し、クラス名だけ用意している */
+@keyframes fall {
+  0% { transform: translateY(-5vh) translateX(0) rotate(0deg); }
+  100% { transform: translateY(105vh) translateX(30px) rotate(300deg); }
+}
+@keyframes unfurl {
+  from { opacity: 0; transform: translateY(-10px) scaleY(0.92); }
+  to { opacity: 1; transform: none; }
+}
+.animate-fall { animation: fall linear infinite; }
+.animate-unfurl { animation: unfurl 0.5s cubic-bezier(0.2, 0.8, 0.3, 1); }
+
+/* アニメーションを避けたい設定のユーザーには花びらを表示しない */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fall { animation: none; display: none; }
+}
