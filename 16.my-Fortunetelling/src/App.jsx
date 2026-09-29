@@ -54,7 +54,7 @@ export default function App() {
 
         <DrawButton disabled={!!todaysEntry} onClick={handleDraw} />
         {!todaysEntry && (
-          <p className="text-center text-xs text-ink-soft -mt-3 mb-8">
+          <p className="text-center text-xs text-ink-soft mb-8">
             ※ 結果は日付が変わるとまた引けます
           </p>
         )}
